@@ -31,6 +31,20 @@ pipeline {
             }
         }
 
+           stage('starting the website') {
+            steps {
+                // Build the React app
+                bat 'npm install -g serve'
+            }
+        }
+
+           stage('Building the website') {
+            steps {
+                // Build the React app
+                bat 'serve -s build'
+            }
+        }
+        
         stage('Archive Artifacts') {
             steps {
                 // Archive the build artifacts (e.g., the 'build' directory)
