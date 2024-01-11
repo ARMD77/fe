@@ -1,5 +1,7 @@
 pipeline {
-    agent build-agent
+    agent {
+        label "${master}"
+    }
 
     environment {
         // Define environment variables if needed
