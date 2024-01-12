@@ -24,27 +24,34 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build-1') {
+            steps {
+                // Build the React app
+                bat 'npm start'
+            }
+        }
+
+                stage('Build-2') {
             steps {
                 // Build the React app
                 bat 'npm run build'
             }
         }
 
-           stage('starting the website') {
+                stage('Build-3') {
             steps {
                 // Build the React app
                 bat 'npm install -g serve'
             }
         }
 
-           stage('Building the website') {
+                stage('Build-4') {
             steps {
                 // Build the React app
                 bat 'serve -s build'
             }
         }
-        
+
         stage('Archive Artifacts') {
             steps {
                 // Archive the build artifacts (e.g., the 'build' directory)
