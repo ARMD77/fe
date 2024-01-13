@@ -24,21 +24,21 @@ pipeline {
             }
         }
 
-                        stage('Build-2') {
+        stage('Build-1') {
             steps {
                 // Build the React app
                 bat 'npm run build'
             }
         }
 
-                stage('Build-3') {
+                stage('Build-2') {
             steps {
                 // Build the React app
                 bat 'npm install -g serve'
             }
         }
 
-                stage('Build-4') {
+                stage('Build-3') {
             steps {
                 // Build the React app
                 bat 'serve -s build'
