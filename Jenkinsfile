@@ -24,19 +24,6 @@ pipeline {
             }
         }
 
-        stage('Build-1') {
-            steps {
-                // Build the React app
-                bat 'npm start'
-            }
-        }
-
-                stage('Build-2') {
-            steps {
-                // Build the React app
-                bat 'npm run build'
-            }
-        }
 
                 stage('Build-3') {
             steps {
