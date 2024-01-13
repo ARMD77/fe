@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "build-agent"
-    }
+    agent { label "build-agent" }
 
     environment {
         // Define environment variables if needed
