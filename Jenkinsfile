@@ -31,14 +31,7 @@ pipeline {
             }
         }
 
-                stage('Build-2') {
-            steps {
-                // Build the React app
-                bat 'npm install -g serve'
-            }
-        }
-
-                stage('Build-3') {
+        stage('Build-3') {
             steps {
                 // Build the React app
                 bat 'serve -s build'
