@@ -1,5 +1,7 @@
 pipeline {
-    agent { label "build-agent" }
+    agent {
+        label "build-agent"
+    }
 
     environment {
         // Define environment variables if needed
@@ -18,25 +20,32 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install Node.js dependencies
-                bat 'npm start'
+                bat 'npm install'
             }
         }
 
         stage('Build-1') {
             steps {
                 // Build the React app
-                bat 'npm run build'
+                bat 'npm start'
             }
         }
 
                 stage('Build-2') {
             steps {
                 // Build the React app
-                bat 'npm install -g serve'
+                bat 'npm run build'
             }
         }
 
                 stage('Build-3') {
+            steps {
+                // Build the React app
+                bat 'npm install -g serve'
+            }
+        }
+
+                stage('Build-4') {
             steps {
                 // Build the React app
                 bat 'serve -s build'
